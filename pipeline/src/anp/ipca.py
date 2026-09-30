@@ -19,6 +19,12 @@ def parse_ipca(payload: list[dict]) -> pd.DataFrame:
     return out.sort_values("mes").reset_index(drop=True)
 
 
+def _tem_lacuna(ipca: pd.DataFrame) -> bool:
+    """True se faltar algum mês entre o primeiro e o último da série (BCB já entregou séries cortadas)."""
+    esperado = set(pd.period_range(ipca["mes"].min(), ipca["mes"].max(), freq="M").strftime("%Y-%m"))
+    return esperado != set(ipca["mes"])
+
+
 def get_ipca(session, cache: Path, timeout: int = 30) -> tuple[pd.DataFrame, bool]:
     try:
         resposta = session.get(
@@ -29,6 +35,8 @@ def get_ipca(session, cache: Path, timeout: int = 30) -> tuple[pd.DataFrame, boo
         )
         resposta.raise_for_status()
         df = parse_ipca(resposta.json())
+        if _tem_lacuna(df):
+            raise ValueError("Série do IPCA recebida com lacunas (meses faltando no meio)")
     except (requests.RequestException, ValueError) as erro:
         if not cache.exists():
             raise RuntimeError(f"IPCA indisponível e sem cache em {cache}: {erro}") from erro

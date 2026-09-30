@@ -37,6 +37,15 @@ def test_ultima_semana_precisa_das_27_ufs_na_gasolina():
         validate(sem_df, None, HOJE)
 
 
+def test_ultima_semana_precisa_das_27_ufs_tambem_para_diesel_e_etanol():
+    # A checagem não pode olhar só gasolina: se o link de diesel sumir da página da ANP,
+    # o produto pararia de ser atualizado sem que nenhuma validação percebesse.
+    base = diario_sintetico(DATAS)
+    sem_diesel_df = base[~((base.uf == "DF") & (base.data == pd.Timestamp("2026-07-20")) & (base.produto == "diesel_s10"))]
+    with pytest.raises(ValidationError, match="diesel_s10.*DF|DF.*diesel_s10"):
+        validate(sem_diesel_df, None, HOJE)
+
+
 def test_variacao_semanal_de_25_por_cento_falha():
     def preco(d, uf, p):
         if p == "gasolina":
@@ -65,4 +74,5 @@ def test_lista_todos_os_erros_de_uma_vez():
     base = diario_sintetico(["2026-07-20", "2026-07-27"], ufs=[u for u in UFS if u != "AC"])
     with pytest.raises(ValidationError) as erro:
         validate(base, None, HOJE)
-    assert len(erro.value.erros) == 2  # data futura + AC ausente
+    # data futura + AC ausente nos 3 produtos (gasolina, etanol, diesel_s10)
+    assert len(erro.value.erros) == 4

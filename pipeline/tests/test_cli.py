@@ -90,6 +90,29 @@ def test_falha_de_validacao_nao_grava_nada(tmp_path):
     assert not list((tmp_path / "processed").glob("diario_*.csv"))
 
 
+def test_update_com_lacuna_maior_que_7_dias_falha(tmp_path):
+    # Simula o pipeline semanal falhando repetidas vezes: o backfill deixa a base em
+    # 20/07/2026, mas as "últimas 4 semanas" seguintes só cobrem a partir de 10/08/2026.
+    executar("backfill", session=FakeSession(_rotas()), agora=AGORA, **_dirs(tmp_path))
+    rotas = _rotas()
+    rotas[QUS_GE] = FakeResponse(csv_anp(coletas("10/08/2026", GE) + coletas("17/08/2026", GE)))
+    rotas[QUS_DG] = FakeResponse(csv_anp(coletas("10/08/2026", DG) + coletas("17/08/2026", DG)))
+    agora2 = datetime(2026, 8, 17, 12, 0, tzinfo=timezone.utc)
+    with pytest.raises(RuntimeError, match="[Ll]acuna"):
+        executar("update", session=FakeSession(rotas), agora=agora2, **_dirs(tmp_path))
+    # nada foi publicado nem sobrescrito
+    assert (tmp_path / "processed" / "diario_2026.csv").exists()
+    meta = json.loads((tmp_path / "out" / "meta.json").read_text(encoding="utf-8"))
+    assert meta["semana_mais_recente"] == "2026-07-20"
+
+
+def test_falta_link_de_diesel_falha(tmp_path):
+    rotas = _rotas()
+    rotas[PAGINA] = FakeResponse(_html(SEMESTRAL, MENSAL_JUN, MENSAL_JUL_GE, MENSAL_JUL_DG, QUS_GE))  # sem QUS_DG
+    with pytest.raises(RuntimeError, match="diesel"):
+        executar("backfill", session=FakeSession(rotas), agora=AGORA, **_dirs(tmp_path))
+
+
 def test_main_devolve_1_e_mensagem_clara_em_erro(tmp_path, capsys, monkeypatch):
     def explode(*args, **kwargs):
         raise RuntimeError("ANP fora do ar")

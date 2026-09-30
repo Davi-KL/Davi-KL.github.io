@@ -5,7 +5,7 @@ from datetime import date
 import pandas as pd
 
 from anp.aggregate import weekly
-from anp.config import MAX_VARIACAO_SEMANAL, PRECO_MAX, PRECO_MIN, UFS
+from anp.config import MAX_VARIACAO_SEMANAL, ORDEM_PRODUTOS, PRECO_MAX, PRECO_MIN, UFS
 
 
 class ValidationError(RuntimeError):
@@ -32,12 +32,15 @@ def validate(diario: pd.DataFrame, maximo_anterior: pd.Timestamp | None, hoje: d
 
     semanal = weekly(diario)
     ultima_semana = semanal["semana"].max()
-    presentes = set(
-        semanal[(semanal.semana == ultima_semana) & (semanal.produto == "gasolina") & (semanal.uf != "BR")]["uf"]
-    )
-    faltando = sorted(set(UFS) - presentes)
-    if faltando:
-        erros.append(f"semana de {ultima_semana.date()} sem gasolina para: {', '.join(faltando)}")
+    # As três séries publicadas (não só gasolina): se o link de um produto sumir da
+    # página da ANP, esse produto para de ser atualizado sem que nada avise.
+    for produto in ORDEM_PRODUTOS:
+        presentes = set(
+            semanal[(semanal.semana == ultima_semana) & (semanal.produto == produto) & (semanal.uf != "BR")]["uf"]
+        )
+        faltando = sorted(set(UFS) - presentes)
+        if faltando:
+            erros.append(f"semana de {ultima_semana.date()} sem {produto} para: {', '.join(faltando)}")
 
     br = semanal[(semanal.uf == "BR") & (semanal.produto == "gasolina")].sort_values("semana")
     if len(br) >= 2:

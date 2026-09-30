@@ -14,7 +14,7 @@ from anp.clean import clean, load_raw
 from anp.collect import download, fetch_text
 from anp.export import export_all
 from anp.ipca import get_ipca
-from anp.links import discover_links
+from anp.links import discover_links, tipo_produto
 from anp.merge import base_vazia, load_base, save_base, upsert
 from anp.validate import validate
 
@@ -34,6 +34,13 @@ def executar(modo: str, *, session, raw_dir: Path, processed_dir: Path, out_dir:
     links = discover_links(fetch_text(config.ANP_PAGE_URL, session))
     if not links.ultimas_semanas:
         raise RuntimeError("Nenhum link de 'últimas 4 semanas' encontrado na página da ANP")
+    tipos_qus = {tipo_produto(u) for u in links.ultimas_semanas}
+    faltando_tipos = {"gasolina-etanol", "diesel-gnv"} - tipos_qus
+    if faltando_tipos:
+        raise RuntimeError(
+            f"Faltam links de 'últimas 4 semanas' para: {', '.join(sorted(faltando_tipos))}. "
+            "Sem isso, o produto correspondente pararia de ser atualizado silenciosamente."
+        )
 
     if modo == "backfill":
         if not links.semestrais:
@@ -55,8 +62,22 @@ def executar(modo: str, *, session, raw_dir: Path, processed_dir: Path, out_dir:
     else:
         raise ValueError(f"modo desconhecido: {modo}")
 
+    minimos_novos = []
     for url in links.ultimas_semanas:
-        base = _processar(url, base, raw_dir, session, forcar=True)
+        caminho = download(url, raw_dir, session, forcar=True)
+        print(f"  processando {caminho.name}", flush=True)
+        novo = daily(clean(load_raw(caminho)))
+        minimos_novos.append(novo["data"].min())
+        base = upsert(base, novo)
+
+    if modo == "update" and maximo_anterior is not None and minimos_novos:
+        menor_novo = min(minimos_novos)
+        limite = maximo_anterior + pd.Timedelta(days=7)
+        if menor_novo > limite:
+            raise RuntimeError(
+                f"Lacuna nos dados: a base tinha até {maximo_anterior.date()}, mas as 'últimas 4 semanas' "
+                f"só cobrem a partir de {menor_novo.date()}. Rode `anp backfill` para preencher a lacuna."
+            )
 
     validate(base, maximo_anterior, agora.date())
     ipca, ipca_em_cache = get_ipca(session, processed_dir / "ipca.csv")

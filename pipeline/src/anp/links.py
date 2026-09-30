@@ -27,13 +27,17 @@ class LinksAnp:
     ultimas_semanas: list[str] = field(default_factory=list)
 
 
-def _tipo(nome: str) -> str | None:
-    nome = nome.lower()
-    if "gasolina" in nome:
+def tipo_produto(nome_ou_url: str) -> str | None:
+    """Classifica um nome de arquivo (ou URL inteira) como 'gasolina-etanol' ou 'diesel-gnv'."""
+    nome_ou_url = nome_ou_url.lower()
+    if "gasolina" in nome_ou_url:
         return "gasolina-etanol"
-    if "diesel" in nome:
+    if "diesel" in nome_ou_url:
         return "diesel-gnv"
     return None
+
+
+_tipo = tipo_produto
 
 
 def _mes(nome: str) -> int | None:

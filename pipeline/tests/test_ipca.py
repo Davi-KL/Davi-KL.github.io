@@ -57,3 +57,22 @@ def test_get_ipca_sem_api_e_sem_cache_falha(tmp_path):
     s = FakeSession({URL: FakeResponse(b"", status=503)})
     with pytest.raises(RuntimeError, match="sem cache"):
         get_ipca(s, tmp_path / "ipca.csv")
+
+
+def test_get_ipca_com_lacuna_usa_cache_quando_existe(tmp_path):
+    # Falta 02/2026 no meio da série: sem essa checagem, geraria NaN num ponto arbitrário
+    # do meio (não só no início) — a API do BCB não deveria conseguir "furar" o IPCA assim.
+    com_lacuna = [{"data": "01/01/2026", "valor": "0.5"}, {"data": "01/03/2026", "valor": "0.5"}]
+    cache = tmp_path / "ipca.csv"
+    cache.write_text("mes,variacao\n2026-01,0.40\n", encoding="utf-8")
+    s = FakeSession({URL: FakeResponse(json.dumps(com_lacuna).encode())})
+    df, em_cache = get_ipca(s, cache)
+    assert em_cache is True
+    assert df.to_dict("list") == {"mes": ["2026-01"], "variacao": [0.4]}
+
+
+def test_get_ipca_com_lacuna_e_sem_cache_falha(tmp_path):
+    com_lacuna = [{"data": "01/01/2026", "valor": "0.5"}, {"data": "01/03/2026", "valor": "0.5"}]
+    s = FakeSession({URL: FakeResponse(json.dumps(com_lacuna).encode())})
+    with pytest.raises(RuntimeError, match="sem cache"):
+        get_ipca(s, tmp_path / "ipca.csv")
