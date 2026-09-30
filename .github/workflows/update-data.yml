@@ -58,3 +58,12 @@ jobs:
           git commit -m "data: atualização semanal ANP (semana ${semana})"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml
