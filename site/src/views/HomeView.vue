@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { watchEffect } from "vue"
 import { useI18n } from "vue-i18n"
+import AboutSection from "../components/home/AboutSection.vue"
+import ExperienceSection from "../components/home/ExperienceSection.vue"
+import HeroSection from "../components/home/HeroSection.vue"
 import type { Idioma } from "../i18n"
 import { aplicarMeta } from "../lib/seo"
 
@@ -11,5 +14,9 @@ watchEffect(() =>
 </script>
 
 <template>
-  <main id="conteudo"></main>
+  <main id="conteudo">
+    <HeroSection />
+    <AboutSection />
+    <ExperienceSection />
+  </main>
 </template>
