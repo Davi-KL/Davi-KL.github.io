@@ -18,16 +18,14 @@ const { t, locale } = useI18n()
 const c = useConteudo()
 const idioma = computed(() => locale.value as Idioma)
 
-const { dados: meta, carregando: carregandoMeta } = useFuelData<Meta>("meta.json")
+const { dados: meta } = useFuelData<Meta>("meta.json")
 const { dados: evolucao, erro: erroEvolucao, carregando: carregandoEvolucao } = useFuelData<Evolucao>("evolucao.json")
 const { dados: ranking, erro: erroRanking, carregando: carregandoRanking } = useFuelData<Ranking>("ranking_uf.json")
 const { dados: etanol, erro: erroEtanol, carregando: carregandoEtanol } = useFuelData<EtanolGasolina>("etanol_gasolina.json")
 
-// As análises só entram quando os 4 arquivos responderam (com sucesso ou erro). Até lá, um espaço
-// da altura da tela evita que o conteúdo "pule" ao chegar (CLS medido pelo Lighthouse).
-const pronto = computed(
-  () => ![carregandoMeta, carregandoEvolucao, carregandoRanking, carregandoEtanol].some((c) => c.value),
-)
+// Cada seção mostra seu próprio estado (carregando/erro/pronta) de forma independente: uma
+// análise lenta ou com erro não pode travar as outras que já chegaram (Foco de revisão nº 1).
+// A altura mínima reservada em EstadoDados evita que o conteúdo "pule" ao chegar (CLS).
 const desatualizado = computed(() => meta.value !== null && dadosDesatualizados(meta.value.semana_mais_recente, new Date()))
 
 watchEffect(() =>
@@ -51,8 +49,6 @@ watchEffect(() =>
       </p>
     </header>
 
-    <p v-if="!pronto" class="pagina-dados__carregando" role="status">{{ t("dados.carregando") }}</p>
-    <template v-else>
     <section class="analise" aria-labelledby="evolucao-titulo" data-testid="analise-evolucao">
       <h2 id="evolucao-titulo">{{ c.dados.evolucao.titulo }}</h2>
       <p class="secao__subtitulo">{{ c.dados.evolucao.explicacao }}</p>
@@ -78,7 +74,6 @@ watchEffect(() =>
     </section>
 
     <MethodologySection :meta="meta" />
-    </template>
   </main>
 </template>
 
@@ -87,7 +82,6 @@ watchEffect(() =>
 .voltar { display: inline-flex; align-items: center; min-height: 44px; }
 .pagina-dados__cabecalho { padding-block: 1.5rem 1rem; }
 .pagina-dados__atualizacao { color: var(--cor-texto-suave); font-size: 0.9375rem; min-height: 1.6em; }
-.pagina-dados__carregando { min-height: 100vh; padding-top: 2rem; color: var(--cor-texto-suave); }
 .selo-aviso {
   display: inline-block; margin-left: 0.5rem; padding: 0.125rem 0.625rem;
   border-radius: 999px; border: 1px solid var(--cor-ambar); color: var(--cor-ambar); font-size: 0.8125rem;

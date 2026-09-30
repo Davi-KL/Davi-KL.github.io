@@ -3,6 +3,7 @@ import etanol from "../src/__fixtures__/etanol_gasolina.json"
 import evolucao from "../src/__fixtures__/evolucao.json"
 import meta from "../src/__fixtures__/meta.json"
 import ranking from "../src/__fixtures__/ranking_uf.json"
+import { limparCacheDados } from "../src/composables/useFuelData"
 import FuelDataView from "../src/views/FuelDataView.vue"
 import { montar, simularDados, texto } from "./montar"
 
@@ -43,6 +44,21 @@ describe("FuelDataView", () => {
     const w = await montar(FuelDataView, { rota: "/dados-combustiveis" })
     expect(texto(w.get("[data-testid='analise-evolucao']"))).toContain("Dados indisponíveis no momento.")
     expect(texto(w.get("[data-testid='analise-ranking']"))).toContain("Preço mais alto")
+  })
+
+  it("uma análise lenta não bloqueia as outras (elas não esperam a mais lenta)", async () => {
+    limparCacheDados()
+    const respostas: Record<string, unknown> = { "meta.json": meta, "ranking_uf.json": ranking, "etanol_gasolina.json": etanol }
+    const fetchMock = vi.fn((url: string | URL) => {
+      const nome = String(url).split("/").pop() ?? ""
+      if (nome === "evolucao.json") return new Promise<Response>(() => {}) // nunca resolve
+      return Promise.resolve({ ok: true, status: 200, json: async () => respostas[nome] } as Response)
+    })
+    vi.stubGlobal("fetch", fetchMock)
+    const w = await montar(FuelDataView, { rota: "/dados-combustiveis" })
+    expect(texto(w.get("[data-testid='analise-evolucao']"))).toContain("Carregando dados")
+    expect(texto(w.get("[data-testid='analise-ranking']"))).toContain("Preço mais alto")
+    expect(texto(w.get("[data-testid='analise-etanol']"))).toContain("compensa")
   })
 
   it("trocar o combustível no ranking atualiza o insight", async () => {

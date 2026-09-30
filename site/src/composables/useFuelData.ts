@@ -2,6 +2,8 @@ import { ref, type Ref } from "vue"
 
 export type ArquivoDados = "meta.json" | "evolucao.json" | "ranking_uf.json" | "etanol_gasolina.json"
 
+const TEMPO_LIMITE_MS = 12_000
+
 const cache = new Map<string, Promise<unknown>>()
 
 export function limparCacheDados(): void {
@@ -12,10 +14,14 @@ export function carregarJson<T>(arquivo: ArquivoDados): Promise<T> {
   const url = `${import.meta.env.BASE_URL}data/${arquivo}`
   let promessa = cache.get(url)
   if (!promessa) {
-    promessa = fetch(url).then((resposta) => {
-      if (!resposta.ok) throw new Error(`HTTP ${resposta.status} ao carregar ${arquivo}`)
-      return resposta.json()
-    })
+    const controlador = new AbortController()
+    const tempoEsgotado = setTimeout(() => controlador.abort(), TEMPO_LIMITE_MS)
+    promessa = fetch(url, { signal: controlador.signal })
+      .then((resposta) => {
+        if (!resposta.ok) throw new Error(`HTTP ${resposta.status} ao carregar ${arquivo}`)
+        return resposta.json()
+      })
+      .finally(() => clearTimeout(tempoEsgotado))
     promessa.catch(() => cache.delete(url))
     cache.set(url, promessa)
   }
