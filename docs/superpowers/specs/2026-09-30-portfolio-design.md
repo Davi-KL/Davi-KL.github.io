@@ -197,7 +197,7 @@ A razão é `preço etanol / preço gasolina`. Se `razao < limiar`, `compensa = 
 | **SOMA** | Análise do uso excessivo de redes sociais e da saúde mental, com dashboard interativo (Python, Pandas, Matplotlib, HTML/CSS/JS). | Front-end, criação dos gráficos e análise dos dados coletados pela Catharina | `cathsatile/SOMA_Social-Media-Overuse-And-Mental-Assessment_` |
 | **Análise ANP** | O pipeline e o dashboard deste portfólio, com atualização semanal automática. | Projeto individual: todo o ciclo | este repositório + `/dados-combustiveis` |
 | **FlowPad** | App em segundo plano para capturar ideias em menos de 3 s (`Ctrl+Shift+Space`). Tem 5 tipos de entrada, lembretes, dashboard com busca e armazenamento local em JSON. Python 3.11, multiplataforma, testes com pytest, `.exe` nas Releases, licença MIT. | Projeto individual | `Davi-KL/FlowPad` |
-| **Projeto Compiladores** | Compilador em C. A descrição de 1 a 2 frases é escrita a partir do README do repositório durante a implementação e aprovada pelo Davi. | a confirmar com o Davi durante a implementação | `Davi-KL/Projeto-Compiladores` |
+| **Analisador Léxico Portugol** (Projeto Compiladores) | Analisador léxico em C99 para uma linguagem no estilo Portugol, feito para a disciplina de Compiladores do CEUB (Makefile + testes). | Projeto individual | `Davi-KL/Projeto-Compiladores` |
 
    No fim da seção, o link "Ver todos no GitHub" aponta para `github.com/Davi-KL?tab=repositories`.
 
@@ -276,14 +276,24 @@ Dado inválido nunca é publicado. Qualquer falha do pipeline encerra o job **se
   - renderização básica de cada seção e de cada gráfico.
 - **Aceite antes de publicar:** Lighthouse ≥ 90 em Performance, Acessibilidade e SEO nas duas rotas, no modo mobile.
 
-## 8. Pendências do Davi antes de publicar
+## 8. Pendências do Davi para a publicação (não bloqueiam o desenvolvimento)
 
 1. Fornecer `cv-pt.pdf` e `cv-en.pdf` sem endereço e telefone. Sem esses arquivos, o botão "Baixar CV" não aparece.
-2. Aprovar a descrição e o "Meu papel" do Projeto Compiladores.
+2. Revisar o texto do card do Projeto Compiladores (seção 9, item 5).
 3. Criar o repositório `Davi-KL.github.io` e ativar o GitHub Pages com a origem "GitHub Actions".
 4. Recomendado: atualizar a descrição do NODUS no currículo e no LinkedIn (hoje diz "Capacitor, IndexedDB").
 
-## 9. Fora do escopo (v1)
+## 9. Ajustes após verificar as fontes (30/09/2026, antes do plano)
+
+A leitura dos arquivos reais da ANP levou a quatro ajustes. Eles prevalecem sobre as seções 4.1, 4.3 e 5.2.
+
+1. **Links descobertos na página, sem padrão de URL.** Os nomes dos arquivos mensais variam. Há erros de digitação, como `02-cados-abertos-preco-gasolina-etanol.csv`. Há arquivos sem extensão. O formato de 2023–2025 é `precos-gasolina-etanol-MM.csv`. O 1º semestre de 2022 está em `precos-semestrais-ca.zip`, e os semestres até 2021 são `.csv`, sem ZIP. O coletor lê os `href` da página oficial e classifica cada link.
+2. **Download com retomada.** O servidor encerra conexões no meio de arquivos grandes. O download retoma com o cabeçalho `Range` e confere o tamanho pelo `Content-Range`/`Content-Length`.
+3. **Base diária em vez de semanal.** Os arquivos são cortados por data de calendário, então uma semana pode ficar dividida entre dois arquivos. A base versionada guarda `data, uf, produto, soma, n`, particionada por ano (`pipeline/data/processed/diario_AAAA.csv`). O *upsert* usa a chave (`data`, `produto`). As médias semanais, mensais e da janela de 4 semanas vêm dessa base e são ponderadas pelo número de coletas. Com isso a mediana deixa de existir, e nenhuma saída a usava. A média mensal passa a ser ponderada pelas coletas do mês, e não a média das médias semanais.
+4. **Formato confirmado.** O cabeçalho é idêntico de 2004 a 2026 (`Estado - Sigla`, `CNPJ da Revenda`, `Produto`, `Data da Coleta`, `Valor de Venda`…), com separador `;` e decimal com vírgula. A codificação é UTF-8 com BOM na maioria dos arquivos e ISO-8859-1 em alguns (ex.: 2021-02). Há campos entre aspas com `;` dentro. A série começa em 10/05/2004.
+5. **Projeto Compiladores.** É um analisador léxico em C99 para uma linguagem no estilo Portugol, feito como trabalho individual da disciplina de Compiladores do CEUB. Reconhece tokens, trata palavras reservadas, monta a tabela de símbolos e entrega um token por vez ao parser. Usa Makefile e testes. O "meu papel" é "Projeto individual".
+
+## 10. Fora do escopo (v1)
 
 - Análises de bandeiras e postos e de bairros do DF.
 - GNV, GLP e gasolina aditivada.
