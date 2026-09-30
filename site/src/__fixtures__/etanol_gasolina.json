@@ -1,0 +1,18 @@
+{
+  "limiar": 0.7,
+  "atual": [
+    { "uf": "BR", "razao": 0.656, "compensa": "etanol" },
+    { "uf": "AC", "razao": 0.725, "compensa": "gasolina" },
+    { "uf": "DF", "razao": 0.657, "compensa": "etanol" },
+    { "uf": "SP", "razao": 0.594, "compensa": "etanol" }
+  ],
+  "historico": {
+    "meses": ["2026-06", "2026-07", "2026-08", "2026-09"],
+    "razao": {
+      "BR": [0.655, 0.657, 0.656, 0.656],
+      "AC": [0.73, 0.728, 0.726, 0.725],
+      "DF": [0.662, 0.661, null, 0.657],
+      "SP": [0.597, 0.596, 0.595, 0.594]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "periodo": { "inicio": "2026-08-31", "fim": "2026-09-25" },
+  "itens": [
+    { "uf": "BR", "produto": "gasolina", "preco_medio": 6.558, "variacao_12m_pct": 3.2, "n_coletas": 90000 },
+    { "uf": "BR", "produto": "etanol", "preco_medio": 4.3, "variacao_12m_pct": 1.1, "n_coletas": 80000 },
+    { "uf": "BR", "produto": "diesel_s10", "preco_medio": 6.9, "variacao_12m_pct": 4.0, "n_coletas": 60000 },
+    { "uf": "AC", "produto": "gasolina", "preco_medio": 7.45, "variacao_12m_pct": 5.0, "n_coletas": 300 },
+    { "uf": "AC", "produto": "etanol", "preco_medio": 5.4, "variacao_12m_pct": 2.0, "n_coletas": 200 },
+    { "uf": "AC", "produto": "diesel_s10", "preco_medio": 7.9, "variacao_12m_pct": 8.1, "n_coletas": 250 },
+    { "uf": "DF", "produto": "gasolina", "preco_medio": 6.669, "variacao_12m_pct": 2.9, "n_coletas": 1200 },
+    { "uf": "DF", "produto": "etanol", "preco_medio": 4.38, "variacao_12m_pct": null, "n_coletas": 1100 },
+    { "uf": "DF", "produto": "diesel_s10", "preco_medio": 6.95, "variacao_12m_pct": 3.5, "n_coletas": 900 },
+    { "uf": "SP", "produto": "gasolina", "preco_medio": 6.3, "variacao_12m_pct": 2.0, "n_coletas": 15000 },
+    { "uf": "SP", "produto": "etanol", "preco_medio": 3.74, "variacao_12m_pct": 0.5, "n_coletas": 14000 },
+    { "uf": "SP", "produto": "diesel_s10", "preco_medio": 6.7, "variacao_12m_pct": 3.8, "n_coletas": 9000 }
+  ]
+}

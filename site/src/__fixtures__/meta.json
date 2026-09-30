@@ -1,0 +1,23 @@
+{
+  "atualizado_em": "2026-09-26T12:04:00Z",
+  "semana_mais_recente": "2026-09-21",
+  "n_coletas_total": 420419,
+  "ipca_ate": "2026-08",
+  "ipca_em_cache": false,
+  "fontes": [
+    { "nome": "ANP — Série Histórica de Preços de Combustíveis", "url": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/serie-historica-de-precos-de-combustiveis" },
+    { "nome": "Banco Central — SGS 433 (IPCA)", "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json" }
+  ],
+  "destaques": {
+    "gasolina_df": 6.669,
+    "gasolina_br": 6.558,
+    "diff_df_br_pct": 1.7,
+    "ufs_etanol_compensa": 11,
+    "maior_alta_12m": { "uf": "AC", "produto": "diesel_s10", "pct": 8.1 }
+  },
+  "serie_home": {
+    "meses": ["2026-06", "2026-07", "2026-08", "2026-09"],
+    "gasolina_br": [6.41, 6.47, 6.52, 6.558],
+    "gasolina_df": [6.5, 6.55, null, 6.669]
+  }
+}
