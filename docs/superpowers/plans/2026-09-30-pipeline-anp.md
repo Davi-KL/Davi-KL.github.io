@@ -39,7 +39,7 @@
 
 ---
 
-### Tarefa 1: Pacote Python e configuração
+### Task 1: Pacote Python e configuração
 
 **Arquivos:**
 - Criar: `pipeline/pyproject.toml`
@@ -188,7 +188,7 @@ git commit -m "feat(pipeline): pacote anp e configuração" -m "Co-Authored-By: 
 
 ---
 
-### Tarefa 2: Descoberta de links na página da ANP
+### Task 2: Descoberta de links na página da ANP
 
 **Arquivos:**
 - Criar: `pipeline/src/anp/links.py`
@@ -363,7 +363,7 @@ git commit -m "feat(pipeline): descoberta de links na página da ANP" -m "Co-Aut
 
 ---
 
-### Tarefa 3: Download com retomada
+### Task 3: Download com retomada
 
 **Arquivos:**
 - Criar: `pipeline/tests/helpers.py` (usado por todas as tarefas seguintes)
@@ -708,7 +708,7 @@ git commit -m "feat(pipeline): download com retomada e verificação de tamanho"
 
 ---
 
-### Tarefa 4: Leitura e limpeza dos CSVs
+### Task 4: Leitura e limpeza dos CSVs
 
 **Arquivos:**
 - Criar: `pipeline/src/anp/clean.py`
@@ -911,7 +911,7 @@ git commit -m "feat(pipeline): leitura (utf-8/latin-1/zip) e limpeza dos CSVs" -
 
 ---
 
-### Tarefa 5: Agregações
+### Task 5: Agregações
 
 **Arquivos:**
 - Criar: `pipeline/src/anp/aggregate.py`
@@ -1090,7 +1090,7 @@ git commit -m "feat(pipeline): agregações diária, semanal, mensal e por janel
 
 ---
 
-### Tarefa 6: Base diária versionada (upsert e armazenamento)
+### Task 6: Base diária versionada (upsert e armazenamento)
 
 **Arquivos:**
 - Criar: `pipeline/src/anp/merge.py`
@@ -1271,7 +1271,7 @@ git commit -m "feat(pipeline): base diária com upsert por data e produto" -m "C
 
 ---
 
-### Tarefa 7: IPCA e correção pela inflação
+### Task 7: IPCA e correção pela inflação
 
 **Arquivos:**
 - Criar: `pipeline/src/anp/ipca.py`
@@ -1426,7 +1426,7 @@ git commit -m "feat(pipeline): IPCA do BCB com cache e fatores de correção" -m
 
 ---
 
-### Tarefa 8: Validações de sanidade
+### Task 8: Validações de sanidade
 
 **Arquivos:**
 - Criar: `pipeline/src/anp/validate.py`
@@ -1587,7 +1587,7 @@ git commit -m "feat(pipeline): validações de sanidade antes de publicar" -m "C
 
 ---
 
-### Tarefa 9: Contrato (JSON Schemas) e exportação
+### Task 9: Contrato (JSON Schemas) e exportação
 
 **Arquivos:**
 - Criar: `schemas/evolucao.schema.json`
@@ -2113,7 +2113,7 @@ git commit -m "feat(pipeline): JSON Schemas do contrato e exportação validada"
 
 ---
 
-### Tarefa 10: Linha de comando (`anp backfill` / `anp update`)
+### Task 10: Linha de comando (`anp backfill` / `anp update`)
 
 **Arquivos:**
 - Criar: `pipeline/src/anp/cli.py`
@@ -2358,7 +2358,7 @@ git commit -m "feat(pipeline): comandos backfill e update" -m "Co-Authored-By: C
 
 ---
 
-### Tarefa 11: Carga histórica real (execução local)
+### Task 11: Carga histórica real (execução local)
 
 Esta tarefa acessa a internet e demora. São cerca de 45 arquivos semestrais, que ocupam uns 3 GB se forem mantidos. Ela não cria código novo: gera os dados reais e confere se estão plausíveis.
 
@@ -2423,7 +2423,7 @@ git commit -m "data: carga histórica ANP 2004–2026" -m "Co-Authored-By: Claud
 
 ---
 
-### Tarefa 12: Workflow semanal no GitHub Actions
+### Task 12: Workflow semanal no GitHub Actions
 
 **Arquivos:**
 - Criar: `.github/workflows/update-data.yml`

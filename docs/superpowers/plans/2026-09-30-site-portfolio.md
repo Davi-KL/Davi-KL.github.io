@@ -44,7 +44,7 @@
 
 ---
 
-### Tarefa 1: Projeto Vite + estilos base + formatação
+### Task 1: Projeto Vite + estilos base + formatação
 
 **Arquivos:**
 - Criar: `site/package.json`, `site/vite.config.ts`, `site/tsconfig.json`, `site/eslint.config.js`, `site/index.html`
@@ -424,7 +424,7 @@ git commit -m "feat(site): projeto Vite, estilos base e formatação" -m "Co-Aut
 
 ---
 
-### Tarefa 2: Idiomas, conteúdo e perfil
+### Task 2: Idiomas, conteúdo e perfil
 
 **Arquivos:**
 - Criar: `site/src/i18n.ts`
@@ -1144,7 +1144,7 @@ git commit -m "feat(site): conteúdo bilíngue, perfil e i18n" -m "Co-Authored-B
 
 ---
 
-### Tarefa 3: Tipos de dados, fixtures, contrato e carregamento
+### Task 3: Tipos de dados, fixtures, contrato e carregamento
 
 **Arquivos:**
 - Criar: `site/src/types/dados.ts`
@@ -1587,7 +1587,7 @@ git commit -m "feat(site): tipos, fixtures validados pelo contrato e carregament
 
 ---
 
-### Tarefa 4: Rotas, app, cabeçalho, rodapé e SEO
+### Task 4: Rotas, app, cabeçalho, rodapé e SEO
 
 **Arquivos:**
 - Modificar (substituir por completo): `site/src/router.ts`
@@ -1928,7 +1928,7 @@ git commit -m "feat(site): rotas, cabeçalho bilíngue, rodapé e metadados" -m 
 
 ---
 
-### Tarefa 5: Hero, Sobre e Experiência
+### Task 5: Hero, Sobre e Experiência
 
 **Arquivos:**
 - Criar: `site/src/components/home/HeroSection.vue`, `AboutSection.vue`, `ExperienceSection.vue`
@@ -2235,7 +2235,7 @@ git commit -m "feat(site): hero, sobre e experiência" -m "Co-Authored-By: Claud
 
 ---
 
-### Tarefa 6: Projetos
+### Task 6: Projetos
 
 **Arquivos:**
 - Criar: `site/src/components/home/ProjectCard.vue`, `site/src/components/home/ProjectsSection.vue`
@@ -2393,7 +2393,7 @@ git commit -m "feat(site): seção de projetos com papel em cada card" -m "Co-Au
 
 ---
 
-### Tarefa 7: Prévia da análise (minigráfico) e Contato
+### Task 7: Prévia da análise (minigráfico) e Contato
 
 **Arquivos:**
 - Criar: `site/src/lib/sparkline.ts`
@@ -2687,7 +2687,7 @@ git commit -m "feat(site): prévia da análise com minigráfico e seção de con
 
 ---
 
-### Tarefa 8: Lógica dos gráficos e insights (funções puras)
+### Task 8: Lógica dos gráficos e insights (funções puras)
 
 **Arquivos:**
 - Criar: `site/src/lib/chartTheme.ts`, `site/src/lib/graficos.ts`, `site/src/lib/insights.ts`
@@ -3075,7 +3075,7 @@ git commit -m "feat(site): lógica dos gráficos, tabelas e insights" -m "Co-Aut
 
 ---
 
-### Tarefa 9: Componentes base do dashboard (gráfico, tabela, estados)
+### Task 9: Componentes base do dashboard (gráfico, tabela, estados)
 
 **Arquivos:**
 - Criar: `site/src/types/plotly.d.ts`
@@ -3336,7 +3336,7 @@ git commit -m "feat(site): gráfico Plotly sob demanda, tabela acessível e esta
 
 ---
 
-### Tarefa 10: Página `/dados-combustiveis`
+### Task 10: Página `/dados-combustiveis`
 
 **Arquivos:**
 - Criar: `site/src/components/dados/EvolutionPanel.vue`, `RankingPanel.vue`, `EthanolPanel.vue`, `MethodologySection.vue`
@@ -3833,7 +3833,7 @@ git commit -m "feat(site): página de análise dos combustíveis com três anál
 
 ---
 
-### Tarefa 11: Assets de publicação, fallback de rotas e build
+### Task 11: Assets de publicação, fallback de rotas e build
 
 **Arquivos:**
 - Criar: `site/public/favicon.svg`, `site/public/robots.txt`, `site/public/sitemap.xml`
@@ -3983,7 +3983,7 @@ git commit -m "feat(site): favicon, imagem OG, sitemap e fallback de rotas para 
 
 ---
 
-### Tarefa 12: Deploy automático
+### Task 12: Deploy automático
 
 **Arquivos:**
 - Criar: `.github/workflows/deploy.yml`
@@ -4085,7 +4085,7 @@ git commit -m "ci: deploy no GitHub Pages (push, dados novos ou manual)" -m "Co-
 
 ---
 
-### Tarefa 13: Publicação e aceite (com o Davi)
+### Task 13: Publicação e aceite (com o Davi)
 
 Os passos 1 e 2 são feitos **pelo Davi**, no site do GitHub. O agente para no início desta tarefa e mostra estas instruções.
 
