@@ -1,0 +1,221 @@
+{
+  "ui": {
+    "nav": {
+      "rotulo": "Main navigation",
+      "sobre": "About",
+      "experiencia": "Experience",
+      "projetos": "Projects",
+      "dados": "Data analysis",
+      "contato": "Contact",
+      "menu": "Menu",
+      "pularConteudo": "Skip to content",
+      "idiomaCurto": "PT",
+      "idiomaRotulo": "Switch language to Portuguese"
+    },
+    "hero": {
+      "statAnos": "years in health tech",
+      "statProjetos": "featured projects",
+      "statGasolina": "gasoline in Brasília today (ANP)",
+      "verProjetos": "See projects",
+      "baixarCv": "Download CV"
+    },
+    "projetos": {
+      "papel": "My role",
+      "verTodos": "See all repositories on GitHub",
+      "links": {
+        "codigo": "Code",
+        "documentacao": "Documentation",
+        "analise": "See analysis"
+      }
+    },
+    "previa": {
+      "insightDf": "In Brasília (DF), gasoline costs {preco}: {pct} compared with the national average.",
+      "insightEtanol": "Ethanol pays off in {n} of the 27 states under the 70% rule.",
+      "insightAlta": "Biggest 12-month increase: {produto} in {uf} ({pct}).",
+      "verAnalise": "See full analysis",
+      "graficoRotulo": "Monthly average gasoline price in recent months: Brazil and Brasília (DF)",
+      "brasil": "Brazil",
+      "df": "DF"
+    },
+    "contato": {
+      "email": "Email",
+      "cv": "Download CV (PDF)"
+    },
+    "produtos": {
+      "gasolina": "gasoline",
+      "etanol": "ethanol",
+      "diesel_s10": "S10 diesel"
+    },
+    "dados": {
+      "voltar": "Back to portfolio",
+      "carregando": "Loading data…",
+      "indisponivel": "Data unavailable right now.",
+      "verNoGithub": "See the project on GitHub",
+      "dadosAte": "Data up to the week of {data}.",
+      "desatualizado": "Last update: data from {data}",
+      "produto": "Fuel",
+      "estado": "State",
+      "modoRotulo": "Value type",
+      "nominal": "Nominal values",
+      "real": "Inflation-adjusted",
+      "brasil": "Brazil",
+      "mes": "Month",
+      "preco": "Average price",
+      "variacao": "12-month change",
+      "coletas": "Samples",
+      "razao": "Ethanol ÷ gasoline",
+      "compensa": "Better deal",
+      "compensaEtanol": "Ethanol pays off",
+      "compensaGasolina": "Gasoline pays off",
+      "verTabela": "Show data table",
+      "ocultarTabela": "Hide table",
+      "fontes": "Sources",
+      "verCodigo": "See the pipeline code on GitHub",
+      "totalColetas": "{n} collected prices processed.",
+      "ipcaCache": "The IPCA series could not be updated; values adjusted up to {mes}.",
+      "insightEvolucao": "Adjusted for inflation (in reais of {ref}), gasoline in Brazil cost {inicial} in {mes} and costs {atual} today: {pct}.",
+      "insightRanking": "Highest price: {caro} ({precoCaro}). Lowest: {barato} ({precoBarato}). Brasília (DF) ranks #{pos} most expensive out of {total} states.",
+      "insightEtanol": "Ethanol pays off in {n} states: {lista}.",
+      "insightEtanolNenhum": "Right now ethanol doesn't pay off in any state.",
+      "graficoEvolucao": "Line chart: monthly average {produto} price in Brazil and {uf}",
+      "graficoRanking": "Bar chart: average {produto} price by state over the last four weeks",
+      "graficoRazao": "Bar chart: ethanol-to-gasoline price ratio by state",
+      "graficoRazaoHist": "Line chart: ethanol-to-gasoline ratio over time in Brazil and {uf}"
+    },
+    "meta": {
+      "tituloHome": "Davi Levy — Full Stack Developer · Data",
+      "descricaoHome": "Davi Levy's portfolio: full stack development (C#/.NET, Vue, TypeScript) and data analysis.",
+      "tituloDados": "Fuel prices in Brazil — Davi Levy",
+      "descricaoDados": "Interactive analysis of gasoline, ethanol and diesel prices since 2004, with ANP data updated every week."
+    },
+    "rodape": {
+      "texto": "Built with Vue 3, Vite and open data from ANP.",
+      "codigo": "Source code"
+    }
+  },
+  "conteudo": {
+    "hero": {
+      "titulo": "Full Stack Developer · Data",
+      "frase1": "Code that solves.",
+      "frase2": "Data that explains.",
+      "resumo": "Two years building systems in a high-demand hospital environment at Rede SARAH. Today I combine web development and data analysis to turn real needs into working solutions."
+    },
+    "sobre": {
+      "titulo": "About",
+      "paragrafos": [
+        "I'm a junior full stack developer with two years of experience at Rede SARAH, a network of rehabilitation hospitals in Brasília, Brazil. I started in IT support and grew into web systems development: PL/SQL (Oracle) queries and maintenance in production, internal pages and dashboards, and legacy system modernization — always working directly with clinical and administrative teams.",
+        "I'm studying Computer Science at UniCEUB and deepening my knowledge of Data Science and Artificial Intelligence. I'm looking for 100% remote opportunities in web, back-end, full stack or data analysis roles."
+      ],
+      "stackTitulo": "Stack",
+      "grupos": {
+        "front": "Front-end",
+        "back": "Back-end",
+        "dados": "Data/AI",
+        "devops": "DevOps"
+      },
+      "formacaoTitulo": "Education",
+      "formacao": [
+        { "instituicao": "UniCEUB — Centro Universitário de Brasília", "curso": "B.Sc. in Computer Science", "periodo": "2025 – 2027" },
+        { "instituicao": "University of Brasília (UnB)", "curso": "Software Engineering", "periodo": "2022 – 2024" },
+        { "instituicao": "Faculdade BookPlay", "curso": "Data Science Fundamentals (in progress)", "periodo": "" }
+      ],
+      "certificacoesTitulo": "Certifications",
+      "certificacoes": ["Google AI Essentials", "Google AI Professional Certificate"],
+      "idiomasTitulo": "Languages",
+      "idiomas": ["Portuguese — native", "English — full professional proficiency"]
+    },
+    "experiencia": {
+      "titulo": "Experience",
+      "destaque": {
+        "empresa": "Rede SARAH Rehabilitation Hospitals (Associação das Pioneiras Sociais)",
+        "cargo": "IT Intern — Web Systems Developer",
+        "periodo": "Jan 2024 – Jan 2026",
+        "local": "Brasília, Brazil",
+        "itens": [
+          "Large-scale PL/SQL (Oracle): queries, maintenance and data analysis on a high-volume hospital database with sensitive patient data protected under Brazil's LGPD.",
+          "Internal web development: pages and dashboards for data control and staff access on the intranet, using Vue.js, Quasar, C# and ASP.NET MVC/.NET Framework.",
+          "Legacy modernization: took part in migrating a desktop application to the web with Vue.js, Quasar and C#.",
+          "Software testing: writing and running tests for quality assurance.",
+          "Support and infrastructure: dozens of tickets per month, machine and printer setup, and staff support."
+        ]
+      },
+      "outrasTitulo": "Other experience",
+      "outras": [
+        { "empresa": "Zenit Aerospace", "cargo": "Sales Associate", "periodo": "2023 – 2024" },
+        { "empresa": "Sabin Medicina Diagnóstica", "cargo": "Young Apprentice", "periodo": "2021 – 2022" }
+      ]
+    },
+    "projetos": {
+      "titulo": "Projects",
+      "subtitulo": "Team and solo projects — each card says what my role was.",
+      "itens": {
+        "nodus": {
+          "titulo": "NODUS",
+          "descricao": "Windows desktop app that lets clinical psychologists keep patient records, schedule sessions and track patient history. Works 100% offline: Angular, a local Express server and SQLite packaged with Electron, with data encrypted using AES-256 and a key derived from the user's password that only lives in memory — compliant with Brazil's LGPD and CFP Resolution 06/2019. Capstone project (Projeto Integrador II) at CEUB, with Catharina and Miguel.",
+          "papel": "Project manager, Scrum Master, back-end development and DevOps."
+        },
+        "forunb": {
+          "titulo": "ForUnB",
+          "descricao": "Open-source Q&A platform for peer mentoring among University of Brasília students, with a CI/CD pipeline.",
+          "papel": "Back-end, testing and DevOps: CI/CD automation and deployment."
+        },
+        "soma": {
+          "titulo": "SOMA",
+          "descricao": "Platform that analyzes social media overuse and its effects on mental health, with an interactive dashboard.",
+          "papel": "Front-end, chart design and analysis of the data collected by Catharina."
+        },
+        "anp": {
+          "titulo": "Fuel Price Analysis (ANP)",
+          "descricao": "Python pipeline that collects, cleans and aggregates Brazil's official fuel price survey (ANP) since 2004, with automatic weekly updates through GitHub Actions and an interactive dashboard.",
+          "papel": "Solo project: collection, processing, analysis, visualization and automation."
+        },
+        "flowpad": {
+          "titulo": "FlowPad",
+          "descricao": "Background app to capture ideas without breaking your flow: a shortcut (Ctrl+Shift+Space) opens a popup and saving takes under 3 seconds. Five entry types, automatic reminders, a searchable dashboard and local JSON storage.",
+          "papel": "Solo project."
+        },
+        "compiladores": {
+          "titulo": "Portugol Lexical Analyzer",
+          "descricao": "Lexical analyzer in C99 for a Portugol-style language, built for the Compilers course at CEUB. It recognizes the language's tokens, handles reserved words, builds the symbol table and hands one token at a time to the parser, with a Makefile build and automated tests.",
+          "papel": "Solo project."
+        }
+      }
+    },
+    "previa": {
+      "titulo": "Data analysis: fuel prices in Brazil",
+      "subtitulo": "My own pipeline collects Brazil's open fuel price data (ANP) every week. A few numbers right now:"
+    },
+    "contato": {
+      "titulo": "Contact",
+      "texto": "I'm open to 100% remote opportunities. The fastest way to reach me is by email or LinkedIn."
+    },
+    "dados": {
+      "titulo": "How much does it cost to fill up in Brazil?",
+      "intro": "Analysis of gasoline, ethanol and S10 diesel prices based on the ANP Fuel Price Historical Series, from 2004 to today. The data is collected, cleaned and aggregated by a Python pipeline and updated automatically every week.",
+      "evolucao": {
+        "titulo": "1. How prices changed over time",
+        "explicacao": "Monthly average retail price. With the IPCA inflation adjustment, all values are expressed in reais of the reference month — so 2004 can be fairly compared with today."
+      },
+      "ranking": {
+        "titulo": "2. Where fuel is most expensive",
+        "explicacao": "Average price over the last four weeks by state, from most to least expensive. Hover over or tap a bar to see the 12-month change. The dashed line is the national average."
+      },
+      "etanol": {
+        "titulo": "3. Ethanol or gasoline?",
+        "explicacao": "Ethanol delivers roughly 70% of gasoline's mileage, so it pays off when it costs less than 70% of the gasoline price. The bars show that ratio by state; left of the dashed line, ethanol is the better deal.",
+        "historicoTitulo": "The ratio over time"
+      },
+      "metodologia": {
+        "titulo": "Methodology",
+        "itens": [
+          "Sources: ANP Fuel Price Historical Series (weekly survey at gas stations nationwide) and monthly IPCA inflation from Brazil's Central Bank (SGS series 433).",
+          "Cleaning: products, states, dates and prices are standardized; duplicate records from the same station and prices outside the R$ 0.50 to R$ 20.00 per liter range are removed.",
+          "Averages: computed over every price collected in the period. The national average uses all collections in the country, not the average of state averages.",
+          "S10 diesel: the series starts in 2013, when the product began to be surveyed. Regular diesel is left out so different products are not mixed.",
+          "Inflation: adjusted values use the IPCA accumulated up to the reference month. Months after the latest published IPCA keep their nominal value.",
+          "Updates: a GitHub Actions workflow runs the pipeline every Saturday; if any validation fails, nothing is published and the site keeps the last valid version."
+        ]
+      }
+    }
+  }
+}

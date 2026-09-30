@@ -1,0 +1,221 @@
+{
+  "ui": {
+    "nav": {
+      "rotulo": "Navegação principal",
+      "sobre": "Sobre",
+      "experiencia": "Experiência",
+      "projetos": "Projetos",
+      "dados": "Análise de dados",
+      "contato": "Contato",
+      "menu": "Menu",
+      "pularConteudo": "Pular para o conteúdo",
+      "idiomaCurto": "EN",
+      "idiomaRotulo": "Mudar o idioma para inglês"
+    },
+    "hero": {
+      "statAnos": "anos em health tech",
+      "statProjetos": "projetos em destaque",
+      "statGasolina": "gasolina no DF hoje (ANP)",
+      "verProjetos": "Ver projetos",
+      "baixarCv": "Baixar CV"
+    },
+    "projetos": {
+      "papel": "Meu papel",
+      "verTodos": "Ver todos os repositórios no GitHub",
+      "links": {
+        "codigo": "Código",
+        "documentacao": "Documentação",
+        "analise": "Ver análise"
+      }
+    },
+    "previa": {
+      "insightDf": "No DF, a gasolina custa {preco}: {pct} em relação à média nacional.",
+      "insightEtanol": "O etanol compensa em {n} dos 27 estados pela regra dos 70%.",
+      "insightAlta": "Maior alta em 12 meses: {produto} em {uf} ({pct}).",
+      "verAnalise": "Ver análise completa",
+      "graficoRotulo": "Preço médio mensal da gasolina nos últimos meses: Brasil e DF",
+      "brasil": "Brasil",
+      "df": "DF"
+    },
+    "contato": {
+      "email": "E-mail",
+      "cv": "Baixar CV (PDF)"
+    },
+    "produtos": {
+      "gasolina": "gasolina",
+      "etanol": "etanol",
+      "diesel_s10": "diesel S10"
+    },
+    "dados": {
+      "voltar": "Voltar ao portfólio",
+      "carregando": "Carregando dados…",
+      "indisponivel": "Dados indisponíveis no momento.",
+      "verNoGithub": "Ver o projeto no GitHub",
+      "dadosAte": "Dados até a semana de {data}.",
+      "desatualizado": "Última atualização: dados de {data}",
+      "produto": "Combustível",
+      "estado": "Estado",
+      "modoRotulo": "Tipo de valor",
+      "nominal": "Valores nominais",
+      "real": "Corrigido pela inflação",
+      "brasil": "Brasil",
+      "mes": "Mês",
+      "preco": "Preço médio",
+      "variacao": "Variação em 12 meses",
+      "coletas": "Coletas",
+      "razao": "Etanol ÷ gasolina",
+      "compensa": "Compensa",
+      "compensaEtanol": "Compensa etanol",
+      "compensaGasolina": "Compensa gasolina",
+      "verTabela": "Ver dados em tabela",
+      "ocultarTabela": "Ocultar tabela",
+      "fontes": "Fontes",
+      "verCodigo": "Ver o código do pipeline no GitHub",
+      "totalColetas": "{n} preços coletados processados.",
+      "ipcaCache": "A série do IPCA não pôde ser atualizada; valores corrigidos até {mes}.",
+      "insightEvolucao": "Corrigida pela inflação (em reais de {ref}), a gasolina no Brasil custava {inicial} em {mes} e custa {atual} hoje: {pct}.",
+      "insightRanking": "Preço mais alto: {caro} ({precoCaro}). Mais baixo: {barato} ({precoBarato}). O DF é o {pos}º mais caro entre {total} estados.",
+      "insightEtanol": "O etanol compensa em {n} estados: {lista}.",
+      "insightEtanolNenhum": "Hoje o etanol não compensa em nenhum estado.",
+      "graficoEvolucao": "Gráfico de linhas: preço médio mensal de {produto} no Brasil e em {uf}",
+      "graficoRanking": "Gráfico de barras: preço médio de {produto} por estado nas últimas quatro semanas",
+      "graficoRazao": "Gráfico de barras: razão entre os preços do etanol e da gasolina por estado",
+      "graficoRazaoHist": "Gráfico de linhas: razão etanol/gasolina ao longo do tempo no Brasil e em {uf}"
+    },
+    "meta": {
+      "tituloHome": "Davi Levy — Desenvolvedor Full Stack · Dados",
+      "descricaoHome": "Portfólio de Davi Levy: desenvolvimento full stack (C#/.NET, Vue, TypeScript) e análise de dados.",
+      "tituloDados": "Preços dos combustíveis no Brasil — Davi Levy",
+      "descricaoDados": "Análise interativa dos preços de gasolina, etanol e diesel desde 2004, com dados da ANP atualizados toda semana."
+    },
+    "rodape": {
+      "texto": "Feito com Vue 3, Vite e dados abertos da ANP.",
+      "codigo": "Código-fonte"
+    }
+  },
+  "conteudo": {
+    "hero": {
+      "titulo": "Desenvolvedor Full Stack · Dados",
+      "frase1": "Código que resolve.",
+      "frase2": "Dados que explicam.",
+      "resumo": "Dois anos construindo sistemas em ambiente hospitalar de alta demanda na Rede SARAH. Hoje uno desenvolvimento web e análise de dados para transformar necessidades reais em soluções."
+    },
+    "sobre": {
+      "titulo": "Sobre",
+      "paragrafos": [
+        "Sou desenvolvedor full stack júnior, com dois anos de experiência na Rede SARAH de Hospitais de Reabilitação, em Brasília. Comecei no suporte de TI e evoluí para o desenvolvimento de sistemas web: consultas e manutenção em PL/SQL (Oracle) em produção, páginas e dashboards internos e a modernização de sistemas legados — sempre em contato direto com equipes clínicas e administrativas.",
+        "Curso Ciência da Computação no UniCEUB e aprofundo minha formação em Ciência de Dados e Inteligência Artificial. Busco oportunidades 100% remotas em desenvolvimento web, back-end, full stack ou análise de dados."
+      ],
+      "stackTitulo": "Stack",
+      "grupos": {
+        "front": "Front-end",
+        "back": "Back-end",
+        "dados": "Dados/IA",
+        "devops": "DevOps"
+      },
+      "formacaoTitulo": "Formação",
+      "formacao": [
+        { "instituicao": "UniCEUB — Centro Universitário de Brasília", "curso": "Ciência da Computação", "periodo": "2025 – 2027" },
+        { "instituicao": "Universidade de Brasília (UnB)", "curso": "Engenharia de Software", "periodo": "2022 – 2024" },
+        { "instituicao": "Faculdade BookPlay", "curso": "Fundamentos de Ciência de Dados (em andamento)", "periodo": "" }
+      ],
+      "certificacoesTitulo": "Certificações",
+      "certificacoes": ["Google AI Essentials", "Google AI Professional Certificate"],
+      "idiomasTitulo": "Idiomas",
+      "idiomas": ["Português — nativo", "Inglês — fluente"]
+    },
+    "experiencia": {
+      "titulo": "Experiência",
+      "destaque": {
+        "empresa": "Rede SARAH de Hospitais de Reabilitação (Associação das Pioneiras Sociais)",
+        "cargo": "Estagiário de TI — Desenvolvedor de Sistemas Web",
+        "periodo": "jan/2024 – jan/2026",
+        "local": "Brasília, DF",
+        "itens": [
+          "PL/SQL (Oracle) em larga escala: consultas, manutenção e análise de dados em um banco hospitalar de grande volume, com dados sensíveis de pacientes protegidos pela LGPD.",
+          "Desenvolvimento web interno: páginas e dashboards para controle de dados e de acesso de colaboradores na intranet, com Vue.js, Quasar, C# e ASP.NET MVC/.NET Framework.",
+          "Modernização de sistema legado: participação na migração de uma aplicação desktop para a web com Vue.js, Quasar e C#.",
+          "Testes de software: desenvolvimento e execução de testes para garantia de qualidade.",
+          "Suporte e infraestrutura: dezenas de chamados por mês, configuração de máquinas e impressoras e suporte aos colaboradores."
+        ]
+      },
+      "outrasTitulo": "Outras experiências",
+      "outras": [
+        { "empresa": "Zenit Aerospace", "cargo": "Assessor Comercial", "periodo": "2023 – 2024" },
+        { "empresa": "Sabin Medicina Diagnóstica", "cargo": "Jovem Aprendiz", "periodo": "2021 – 2022" }
+      ]
+    },
+    "projetos": {
+      "titulo": "Projetos",
+      "subtitulo": "Projetos em equipe e individuais — cada card diz qual foi o meu papel.",
+      "itens": {
+        "nodus": {
+          "titulo": "NODUS",
+          "descricao": "Aplicativo desktop para Windows que permite a psicólogos clínicos registrar prontuários, agendar sessões e acompanhar o histórico de pacientes. Funciona 100% offline: Angular, Express local e SQLite empacotados com Electron, com dados cifrados em AES-256 e chave derivada da senha, mantida só em memória — em conformidade com a LGPD e a Resolução CFP 06/2019. Projeto Integrador II do CEUB, com Catharina e Miguel.",
+          "papel": "Gerente de projeto, Scrum Master, desenvolvimento back-end e DevOps."
+        },
+        "forunb": {
+          "titulo": "ForUnB",
+          "descricao": "Plataforma open-source de perguntas e respostas para mentoria entre estudantes da UnB, com pipeline de CI/CD.",
+          "papel": "Back-end, testes e DevOps: automação de CI/CD e deploy."
+        },
+        "soma": {
+          "titulo": "SOMA",
+          "descricao": "Plataforma de análise do uso excessivo de redes sociais e de seus efeitos na saúde mental, com dashboard interativo.",
+          "papel": "Front-end, criação dos gráficos e análise dos dados coletados pela Catharina."
+        },
+        "anp": {
+          "titulo": "Análise de Preços de Combustíveis (ANP)",
+          "descricao": "Pipeline em Python que coleta, limpa e agrega a série histórica de preços de combustíveis da ANP desde 2004, com atualização semanal automática via GitHub Actions e dashboard interativo.",
+          "papel": "Projeto individual: coleta, tratamento, análise, visualização e automação."
+        },
+        "flowpad": {
+          "titulo": "FlowPad",
+          "descricao": "Aplicativo em segundo plano para capturar ideias sem interromper o trabalho: um atalho (Ctrl+Shift+Space) abre a janela e o registro leva menos de 3 segundos. Tem cinco tipos de entrada, lembretes automáticos, dashboard com busca e armazenamento local em JSON.",
+          "papel": "Projeto individual."
+        },
+        "compiladores": {
+          "titulo": "Analisador Léxico Portugol",
+          "descricao": "Analisador léxico em C99 para uma linguagem no estilo Portugol, desenvolvido para a disciplina de Compiladores do CEUB. Reconhece os tokens da linguagem, trata palavras reservadas, monta a tabela de símbolos e entrega um token por vez ao parser, com build via Makefile e testes automatizados.",
+          "papel": "Projeto individual."
+        }
+      }
+    },
+    "previa": {
+      "titulo": "Análise de dados: preços dos combustíveis",
+      "subtitulo": "Um pipeline próprio coleta os dados abertos da ANP toda semana. Alguns números de agora:"
+    },
+    "contato": {
+      "titulo": "Contato",
+      "texto": "Estou aberto a oportunidades 100% remotas. O jeito mais rápido de falar comigo é por e-mail ou LinkedIn."
+    },
+    "dados": {
+      "titulo": "Quanto custa abastecer no Brasil?",
+      "intro": "Análise dos preços de gasolina, etanol e diesel S10 com base na Série Histórica de Preços de Combustíveis da ANP, de 2004 até hoje. Os dados são coletados, limpos e agregados por um pipeline em Python e atualizados automaticamente toda semana.",
+      "evolucao": {
+        "titulo": "1. Como os preços mudaram ao longo do tempo",
+        "explicacao": "Média mensal do preço de venda ao consumidor. Com a correção pelo IPCA, todos os valores ficam em reais do mês de referência — assim dá para comparar 2004 com hoje de forma justa."
+      },
+      "ranking": {
+        "titulo": "2. Onde o combustível é mais caro",
+        "explicacao": "Preço médio nas últimas quatro semanas por estado, do mais caro para o mais barato. Passe o mouse ou toque nas barras para ver a variação em 12 meses. A linha tracejada é a média nacional."
+      },
+      "etanol": {
+        "titulo": "3. Etanol ou gasolina?",
+        "explicacao": "Como o etanol rende cerca de 70% da gasolina, ele compensa quando custa menos de 70% do preço dela. As barras mostram essa razão por estado; à esquerda da linha tracejada, vale abastecer com etanol.",
+        "historicoTitulo": "A razão ao longo do tempo"
+      },
+      "metodologia": {
+        "titulo": "Metodologia",
+        "itens": [
+          "Fontes: Série Histórica de Preços de Combustíveis da ANP (levantamento semanal em postos de todo o país) e IPCA mensal do Banco Central (série SGS 433).",
+          "Limpeza: padronização de produtos, estados, datas e preços; remoção de registros duplicados do mesmo posto e de preços fora da faixa de R$ 0,50 a R$ 20,00 por litro.",
+          "Médias: calculadas sobre todas as coletas do período. A média nacional usa todas as coletas do país, não a média das médias estaduais.",
+          "Diesel S10: a série começa em 2013, quando o produto passou a ser pesquisado. O diesel comum não entra na análise para não misturar produtos diferentes.",
+          "Inflação: os valores corrigidos usam o IPCA acumulado até o mês de referência. Meses posteriores ao último IPCA publicado ficam com o valor nominal.",
+          "Atualização: um GitHub Actions roda o pipeline todo sábado; se alguma validação falhar, nada é publicado e o site mantém a última versão válida."
+        ]
+      }
+    }
+  }
+}

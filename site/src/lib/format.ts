@@ -1,4 +1,4 @@
-type Idioma = "pt" | "en"
+import type { Idioma } from "../i18n"
 
 const LOCALE: Record<Idioma, string> = { pt: "pt-BR", en: "en-US" }
 
