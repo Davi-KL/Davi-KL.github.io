@@ -2,7 +2,9 @@
 import { watchEffect } from "vue"
 import { useI18n } from "vue-i18n"
 import AboutSection from "../components/home/AboutSection.vue"
+import ContactSection from "../components/home/ContactSection.vue"
 import ExperienceSection from "../components/home/ExperienceSection.vue"
+import FuelPreviewSection from "../components/home/FuelPreviewSection.vue"
 import HeroSection from "../components/home/HeroSection.vue"
 import ProjectsSection from "../components/home/ProjectsSection.vue"
 import type { Idioma } from "../i18n"
@@ -20,5 +22,7 @@ watchEffect(() =>
     <AboutSection />
     <ExperienceSection />
     <ProjectsSection />
+    <FuelPreviewSection />
+    <ContactSection />
   </main>
 </template>
