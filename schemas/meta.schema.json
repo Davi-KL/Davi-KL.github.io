@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "meta.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["atualizado_em", "semana_mais_recente", "n_coletas_total", "ipca_ate", "ipca_em_cache", "fontes", "destaques", "serie_home"],
+  "properties": {
+    "atualizado_em": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$" },
+    "semana_mais_recente": { "$ref": "#/$defs/data" },
+    "n_coletas_total": { "type": "integer", "minimum": 1 },
+    "ipca_ate": { "$ref": "#/$defs/mes" },
+    "ipca_em_cache": { "type": "boolean" },
+    "fontes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["nome", "url"],
+        "properties": {
+          "nome": { "type": "string" },
+          "url": { "type": "string", "pattern": "^https://" }
+        }
+      }
+    },
+    "destaques": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gasolina_df", "gasolina_br", "diff_df_br_pct", "ufs_etanol_compensa", "maior_alta_12m"],
+      "properties": {
+        "gasolina_df": { "type": "number" },
+        "gasolina_br": { "type": "number" },
+        "diff_df_br_pct": { "type": ["number", "null"] },
+        "ufs_etanol_compensa": { "type": "integer", "minimum": 0, "maximum": 27 },
+        "maior_alta_12m": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["uf", "produto", "pct"],
+              "properties": {
+                "uf": { "type": "string", "pattern": "^[A-Z]{2}$" },
+                "produto": { "enum": ["gasolina", "etanol", "diesel_s10"] },
+                "pct": { "type": "number" }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "serie_home": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["meses", "gasolina_br", "gasolina_df"],
+      "properties": {
+        "meses": { "type": "array", "items": { "$ref": "#/$defs/mes" } },
+        "gasolina_br": { "$ref": "#/$defs/serie" },
+        "gasolina_df": { "$ref": "#/$defs/serie" }
+      }
+    }
+  },
+  "$defs": {
+    "data": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "mes": { "type": "string", "pattern": "^\\d{4}-\\d{2}$" },
+    "serie": { "type": "array", "items": { "type": ["number", "null"] } }
+  }
+}
