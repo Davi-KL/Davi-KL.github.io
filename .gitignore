@@ -1,0 +1,17 @@
+# Brainstorming / ferramentas
+.superpowers/
+
+# Pipeline
+pipeline/data/raw/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Site
+node_modules/
+site/dist/
+
+# Sistema
+.DS_Store
+Thumbs.db
