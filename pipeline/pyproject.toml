@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anp-pipeline"
+version = "0.1.0"
+description = "Coleta e análise dos preços de combustíveis da ANP para o portfólio de Davi Levy"
+requires-python = ">=3.11"
+dependencies = [
+  "pandas>=2.2,<4",
+  "requests>=2.32,<3",
+  "jsonschema>=4.23,<5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+anp = "anp.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
