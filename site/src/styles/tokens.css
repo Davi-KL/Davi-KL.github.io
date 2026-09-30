@@ -1,0 +1,16 @@
+:root {
+  --cor-fundo: #0f172a;
+  --cor-superficie: #1e293b;
+  --cor-borda: #334155;
+  --cor-texto: #e2e8f0;
+  --cor-texto-forte: #f8fafc;
+  --cor-texto-suave: #94a3b8;
+  --cor-azul: #38bdf8;
+  --cor-violeta: #a78bfa;
+  --cor-verde: #34d399;
+  --cor-ambar: #f59e0b;
+  --fonte: "Inter Variable", Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --raio: 12px;
+  --largura-max: 1120px;
+  color-scheme: dark;
+}
