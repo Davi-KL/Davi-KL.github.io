@@ -14,40 +14,54 @@ const { dados: meta } = useFuelData<Meta>("meta.json")
 const idioma = computed(() => locale.value as Idioma)
 const arquivoCv = computed(() => cv[idioma.value])
 const gasolinaDf = computed(() => (meta.value ? formatarReais(meta.value.destaques.gasolina_df, idioma.value) : null))
+const fotoSrc = `${import.meta.env.BASE_URL}foto-davi.jpg`
 </script>
 
 <template>
   <section class="hero" aria-labelledby="hero-titulo">
-    <div class="container">
-      <p class="hero__cargo">{{ perfil.nome }} · {{ c.hero.titulo }}</p>
-      <h1 id="hero-titulo">{{ c.hero.frase1 }} <span class="hero__destaque">{{ c.hero.frase2 }}</span></h1>
-      <p class="hero__resumo">{{ c.hero.resumo }}</p>
-      <ul class="hero__numeros">
-        <li class="numero">
-          <span class="numero__valor">2+</span>
-          <span class="numero__rotulo">{{ t("hero.statAnos") }}</span>
-        </li>
-        <li class="numero">
-          <span class="numero__valor numero__valor--violeta">{{ projetos.length }}</span>
-          <span class="numero__rotulo">{{ t("hero.statProjetos") }}</span>
-        </li>
-        <li v-if="gasolinaDf" class="numero" data-testid="gasolina-df">
-          <span class="numero__valor numero__valor--verde">{{ gasolinaDf }}</span>
-          <span class="numero__rotulo">{{ t("hero.statGasolina") }}</span>
-        </li>
-      </ul>
-      <div class="hero__acoes">
-        <a class="botao" href="#projetos">{{ t("hero.verProjetos") }}</a>
-        <a v-if="arquivoCv" class="botao botao--secundario" :href="arquivoCv" download>{{ t("hero.baixarCv") }}</a>
-        <a class="botao botao--secundario" :href="perfil.github" target="_blank" rel="noopener">GitHub</a>
-        <a class="botao botao--secundario" :href="perfil.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+    <div class="container hero__layout">
+      <div class="hero__texto">
+        <p class="hero__cargo">{{ perfil.nome }} · {{ c.hero.titulo }}</p>
+        <h1 id="hero-titulo">{{ c.hero.frase1 }} <span class="hero__destaque">{{ c.hero.frase2 }}</span></h1>
+        <p class="hero__resumo">{{ c.hero.resumo }}</p>
+        <ul class="hero__numeros">
+          <li class="numero">
+            <span class="numero__valor">2+</span>
+            <span class="numero__rotulo">{{ t("hero.statAnos") }}</span>
+          </li>
+          <li class="numero">
+            <span class="numero__valor numero__valor--violeta">{{ projetos.length }}</span>
+            <span class="numero__rotulo">{{ t("hero.statProjetos") }}</span>
+          </li>
+          <li v-if="gasolinaDf" class="numero" data-testid="gasolina-df">
+            <span class="numero__valor numero__valor--verde">{{ gasolinaDf }}</span>
+            <span class="numero__rotulo">{{ t("hero.statGasolina") }}</span>
+          </li>
+        </ul>
+        <div class="hero__acoes">
+          <a class="botao" href="#projetos">{{ t("hero.verProjetos") }}</a>
+          <a v-if="arquivoCv" class="botao botao--secundario" :href="arquivoCv" download>{{ t("hero.baixarCv") }}</a>
+          <a class="botao botao--secundario" :href="perfil.github" target="_blank" rel="noopener">GitHub</a>
+          <a class="botao botao--secundario" :href="perfil.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
+      <img class="hero__foto" :src="fotoSrc" :alt="t('hero.fotoAlt')" data-testid="hero-foto" width="480" height="640" />
     </div>
   </section>
 </template>
 
 <style scoped>
 .hero { padding-block: clamp(3rem, 10vw, 6rem) clamp(2.5rem, 8vw, 4rem); }
+.hero__layout { display: flex; flex-direction: column-reverse; gap: 2rem; }
+.hero__texto { flex: 1; min-width: 0; }
+.hero__foto {
+  width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
+  border: 3px solid var(--cor-borda); flex-shrink: 0; align-self: center;
+}
+@media (min-width: 900px) {
+  .hero__layout { flex-direction: row; }
+  .hero__foto { width: 200px; height: 200px; align-self: flex-start; }
+}
 .hero__cargo { color: var(--cor-texto-suave); font-weight: 500; }
 .hero__destaque { color: var(--cor-azul); display: block; }
 .hero__resumo { font-size: 1.125rem; max-width: 60ch; color: var(--cor-texto); }

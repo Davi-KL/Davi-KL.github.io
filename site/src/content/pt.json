@@ -17,7 +17,8 @@
       "statProjetos": "projetos em destaque",
       "statGasolina": "gasolina no DF hoje (ANP)",
       "verProjetos": "Ver projetos",
-      "baixarCv": "Baixar CV"
+      "baixarCv": "Baixar CV",
+      "fotoAlt": "Foto de Davi Levy"
     },
     "projetos": {
       "papel": "Meu papel",
@@ -98,7 +99,7 @@
       "titulo": "Desenvolvedor Full Stack · Dados",
       "frase1": "Código que resolve.",
       "frase2": "Dados que explicam.",
-      "resumo": "Dois anos construindo sistemas em ambiente hospitalar de alta demanda na Rede SARAH. Hoje uno desenvolvimento web e análise de dados para transformar necessidades reais em soluções."
+      "resumo": "Dois anos construindo sistemas em ambiente hospitalar de alta demanda na Rede SARAH. Hoje combino desenvolvimento web e análise de dados para transformar necessidades reais em soluções."
     },
     "sobre": {
       "titulo": "Sobre",

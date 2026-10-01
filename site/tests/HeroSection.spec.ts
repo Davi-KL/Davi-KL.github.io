@@ -40,4 +40,15 @@ describe("HeroSection", () => {
     expect(w.get("h1").text()).toBe("Code that solves. Data that explains.")
     expect(w.get("[data-testid='gasolina-df']").text()).toContain("R$6.67")
   })
+
+  it("mostra a foto de perfil com o alt certo em cada idioma", async () => {
+    simularDados({ "meta.json": meta })
+    const pt = await montar(HeroSection)
+    const foto = pt.get("[data-testid='hero-foto']")
+    expect(foto.attributes("src")).toBe("/foto-davi.jpg")
+    expect(foto.attributes("alt")).toBe("Foto de Davi Levy")
+
+    const en = await montar(HeroSection, { idioma: "en" })
+    expect(en.get("[data-testid='hero-foto']").attributes("alt")).toBe("Photo of Davi Levy")
+  })
 })
