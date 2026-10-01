@@ -21,6 +21,7 @@ describe("FuelDataView", () => {
     const w = await montar(FuelDataView, { rota: "/dados-combustiveis" })
     const t = texto(w)
     expect(w.get("h1").text()).toBe("Quanto custa abastecer no Brasil?")
+    expect(t).toContain("Para mostrar na prática minha capacidade de coletar e analisar dados")
     expect(t).toContain("Dados até a semana de 21/09/2026.")
     expect(w.find("[data-testid='aviso-desatualizado']").exists()).toBe(false)
     expect(t).toContain("custava R$ 6,43 em 06/2026 e custa R$ 6,56 hoje: +2,0%")

@@ -9,6 +9,7 @@ describe("Prévia da análise", () => {
   it("mostra três insights, minigráfico e link para a análise", async () => {
     simularDados({ "meta.json": meta })
     const w = await montar(FuelPreviewSection)
+    expect(texto(w)).toContain("Para mostrar na prática minha capacidade de coletar e analisar dados")
     expect(w.findAll("li")).toHaveLength(3)
     expect(texto(w)).toContain("+1,7% em relação à média nacional")
     expect(texto(w)).toContain("O etanol compensa em 11 dos 27 estados")

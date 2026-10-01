@@ -15,7 +15,6 @@
     "hero": {
       "statAnos": "years in health tech",
       "statProjetos": "featured projects",
-      "statGasolina": "gasoline in Brasília today (ANP)",
       "verProjetos": "See projects",
       "baixarCv": "Download CV",
       "fotoAlt": "Photo of Davi Levy"
@@ -184,7 +183,8 @@
     },
     "previa": {
       "titulo": "Data analysis: fuel prices in Brazil",
-      "subtitulo": "My own pipeline collects Brazil's open fuel price data (ANP) every week. A few numbers right now:"
+      "proposito": "To show my data collection and analysis skills in practice, I built a pipeline that fetches official ANP prices and updates this analysis automatically every week.",
+      "subtitulo": "A few numbers right now:"
     },
     "contato": {
       "titulo": "Contact",
@@ -192,7 +192,7 @@
     },
     "dados": {
       "titulo": "How much does it cost to fill up in Brazil?",
-      "intro": "Analysis of gasoline, ethanol and S10 diesel prices based on the ANP Fuel Price Historical Series, from 2004 to today. The data is collected, cleaned and aggregated by a Python pipeline and updated automatically every week.",
+      "intro": "To show my data collection and analysis skills in practice, I built a pipeline that fetches official ANP prices and updates this analysis automatically every week. Below: gasoline, ethanol and S10 diesel based on the ANP Fuel Price Historical Series, from 2004 to today.",
       "evolucao": {
         "titulo": "1. How prices changed over time",
         "explicacao": "Monthly average retail price. With the IPCA inflation adjustment, all values are expressed in reais of the reference month — so 2004 can be fairly compared with today."

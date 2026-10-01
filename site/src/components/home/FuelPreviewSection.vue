@@ -54,6 +54,7 @@ const insights = computed(() => {
     <div class="container previa">
       <div>
         <h2 id="previa-titulo">{{ c.previa.titulo }}</h2>
+        <p class="previa__proposito">{{ c.previa.proposito }}</p>
         <p class="secao__subtitulo">{{ c.previa.subtitulo }}</p>
         <ul class="previa__insights">
           <li v-for="(insight, k) in insights" :key="k">{{ insight }}</li>
@@ -77,6 +78,7 @@ const insights = computed(() => {
 <style scoped>
 .previa { display: grid; gap: 2rem; align-items: center; }
 @media (min-width: 900px) { .previa { grid-template-columns: 3fr 2fr; } }
+.previa__proposito { color: var(--cor-texto); margin-bottom: 0.5rem; }
 .previa__insights { padding-left: 1.1rem; display: grid; gap: 0.5rem; margin: 0 0 1.5rem; }
 .previa__grafico { margin: 0; }
 .previa__grafico svg { width: 100%; height: 140px; }

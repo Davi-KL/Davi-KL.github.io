@@ -15,7 +15,6 @@
     "hero": {
       "statAnos": "anos em health tech",
       "statProjetos": "projetos em destaque",
-      "statGasolina": "gasolina no DF hoje (ANP)",
       "verProjetos": "Ver projetos",
       "baixarCv": "Baixar CV",
       "fotoAlt": "Foto de Davi Levy"
@@ -184,7 +183,8 @@
     },
     "previa": {
       "titulo": "Análise de dados: preços dos combustíveis",
-      "subtitulo": "Um pipeline próprio coleta os dados abertos da ANP toda semana. Alguns números de agora:"
+      "proposito": "Para mostrar na prática minha capacidade de coletar e analisar dados, construí um pipeline que busca os preços oficiais da ANP e atualiza esta análise automaticamente toda semana.",
+      "subtitulo": "Alguns números de agora:"
     },
     "contato": {
       "titulo": "Contato",
@@ -192,7 +192,7 @@
     },
     "dados": {
       "titulo": "Quanto custa abastecer no Brasil?",
-      "intro": "Análise dos preços de gasolina, etanol e diesel S10 com base na Série Histórica de Preços de Combustíveis da ANP, de 2004 até hoje. Os dados são coletados, limpos e agregados por um pipeline em Python e atualizados automaticamente toda semana.",
+      "intro": "Para mostrar na prática minha capacidade de coletar e analisar dados, construí um pipeline que busca os preços oficiais da ANP e atualiza esta análise automaticamente toda semana. Abaixo: gasolina, etanol e diesel S10 com base na Série Histórica de Preços de Combustíveis da ANP, de 2004 até hoje.",
       "evolucao": {
         "titulo": "1. Como os preços mudaram ao longo do tempo",
         "explicacao": "Média mensal do preço de venda ao consumidor. Com a correção pelo IPCA, todos os valores ficam em reais do mês de referência — assim dá para comparar 2004 com hoje de forma justa."
