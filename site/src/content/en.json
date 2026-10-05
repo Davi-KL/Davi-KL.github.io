@@ -88,6 +88,7 @@
       "tituloDados": "Fuel prices in Brazil — Davi Levy",
       "descricaoDados": "Interactive analysis of gasoline, ethanol and diesel prices since 2004, with ANP data updated every week."
     },
+    "carrossel": { "anterior": "Previous", "proximo": "Next" },
     "rodape": {
       "texto": "Built with Vue 3, Vite and open data from ANP.",
       "codigo": "Source code"

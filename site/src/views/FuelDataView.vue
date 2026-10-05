@@ -84,7 +84,7 @@ watchEffect(() =>
 .pagina-dados__atualizacao { color: var(--cor-texto-suave); font-size: 0.9375rem; min-height: 1.6em; }
 .selo-aviso {
   display: inline-block; margin-left: 0.5rem; padding: 0.125rem 0.625rem;
-  border-radius: 999px; border: 1px solid var(--cor-ambar); color: var(--cor-ambar); font-size: 0.8125rem;
+  border-radius: 999px; border: 1px solid var(--cor-destaque); color: var(--cor-destaque); font-size: 0.8125rem;
 }
 .analise { padding-block: 2.5rem; border-top: 1px solid var(--cor-borda); }
 :deep(.insight) {

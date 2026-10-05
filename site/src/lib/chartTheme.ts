@@ -1,24 +1,24 @@
 import type { Produto } from "../types/dados"
 
 export const CORES_PRODUTO: Record<Produto, string> = {
-  gasolina: "#38bdf8",
-  etanol: "#34d399",
-  diesel_s10: "#a78bfa",
+  gasolina: "#6cc7f0",
+  etanol: "#5fd39a",
+  diesel_s10: "#ff8a7a",
 }
-export const COR_DESTAQUE = "#f59e0b"
-export const COR_REFERENCIA = "#e2e8f0"
+export const COR_DESTAQUE = "#ffb020"
+export const COR_REFERENCIA = "#d9dee7"
 
-const EIXO = { gridcolor: "#1e293b", zerolinecolor: "#334155", linecolor: "#334155", tickcolor: "#334155" }
+const EIXO = { gridcolor: "#1d2430", zerolinecolor: "#2a3240", linecolor: "#2a3240", tickcolor: "#2a3240" }
 
 export const LAYOUT_BASE = {
   paper_bgcolor: "rgba(0,0,0,0)",
   plot_bgcolor: "rgba(0,0,0,0)",
-  font: { family: "Inter Variable, Inter, system-ui, sans-serif", color: "#e2e8f0", size: 13 },
+  font: { family: "Instrument Sans Variable, Instrument Sans, system-ui, sans-serif", color: "#d9dee7", size: 13 },
   margin: { l: 56, r: 16, t: 16, b: 48 },
   xaxis: EIXO,
   yaxis: EIXO,
   legend: { orientation: "h", y: -0.18 },
-  hoverlabel: { bgcolor: "#1e293b", bordercolor: "#334155", font: { color: "#e2e8f0" } },
+  hoverlabel: { bgcolor: "#161b23", bordercolor: "#2a3240", font: { color: "#d9dee7" } },
 }
 
 export const CONFIG_BASE = {

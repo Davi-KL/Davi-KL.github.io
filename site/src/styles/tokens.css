@@ -1,16 +1,20 @@
+/* Paleta "placa de posto à noite": grafite quase preto, papel quente e âmbar de preço. */
 :root {
-  --cor-fundo: #0f172a;
-  --cor-superficie: #1e293b;
-  --cor-borda: #334155;
-  --cor-texto: #e2e8f0;
-  --cor-texto-forte: #f8fafc;
-  --cor-texto-suave: #94a3b8;
-  --cor-azul: #38bdf8;
-  --cor-violeta: #a78bfa;
-  --cor-verde: #34d399;
-  --cor-ambar: #f59e0b;
-  --fonte: "Inter Variable", Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --raio: 12px;
-  --largura-max: 1120px;
+  --cor-fundo: #0e1116;
+  --cor-superficie: #161b23;
+  --cor-superficie-2: #1d2430;
+  --cor-borda: #2a3240;
+  --cor-texto: #d9dee7;
+  --cor-texto-forte: #f5f1e8;
+  --cor-texto-suave: #8b94a5;
+  --cor-destaque: #ffb020;
+  --cor-verde: #5fd39a;
+  --cor-ciano: #6cc7f0;
+  --cor-coral: #ff8a7a;
+  --fonte-display: "Bricolage Grotesque Variable", "Bricolage Grotesque", system-ui, sans-serif;
+  --fonte: "Instrument Sans Variable", "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --raio: 14px;
+  --raio-grande: 24px;
+  --largura-max: 1160px;
   color-scheme: dark;
 }

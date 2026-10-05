@@ -48,10 +48,10 @@ describe("evolução", () => {
 describe("ranking", () => {
   const fmtVar = (v: number | null) => (v === null ? "—" : `${v}%`)
 
-  it("barras do menor para o maior (maior no topo), DF em destaque, média BR como referência", () => {
+  it("barras do menor para o maior (maior no topo), barras acima da média BR em âmbar, média BR como referência", () => {
     const { tracos, referencia } = tracosRanking(rk, "gasolina", fmtVar)
     expect(tracos[0].y).toEqual(["SP", "DF", "AC"])
-    expect((tracos[0].marker as { color: string[] }).color).toEqual([CORES_PRODUTO.gasolina, COR_DESTAQUE, CORES_PRODUTO.gasolina])
+    expect((tracos[0].marker as { color: string[] }).color).toEqual([CORES_PRODUTO.gasolina, COR_DESTAQUE, COR_DESTAQUE])
     expect(tracos[0].customdata).toEqual(["2%", "2.9%", "5%"])
     expect(referencia).toBe(6.558)
   })
@@ -111,6 +111,6 @@ describe("layout", () => {
     const l = mesclarLayout({ yaxis: { tickprefix: "R$ " } }, 400)
     expect(l.height).toBe(400)
     expect((l.yaxis as Record<string, unknown>).tickprefix).toBe("R$ ")
-    expect((l.yaxis as Record<string, unknown>).gridcolor).toBe("#1e293b")
+    expect((l.yaxis as Record<string, unknown>).gridcolor).toBe("#1d2430")
   })
 })

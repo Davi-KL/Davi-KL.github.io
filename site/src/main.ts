@@ -1,4 +1,5 @@
-import "@fontsource-variable/inter"
+import "@fontsource-variable/bricolage-grotesque"
+import "@fontsource-variable/instrument-sans"
 import "./styles/tokens.css"
 import "./styles/base.css"
 import { createApp } from "vue"

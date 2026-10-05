@@ -12,7 +12,7 @@ describe("HeroSection", () => {
   it("mostra frase e números de destaque, sem card de dados soltos", async () => {
     const w = await montar(HeroSection)
     expect(w.get("h1").text()).toBe("Código que resolve. Dados que explicam.")
-    expect(w.findAll(".numero__valor").map((e) => texto(e))).toEqual(["2+", "6"])
+    expect(w.findAll(".placa__valor").map((e) => texto(e))).toEqual(["2+", "6"])
     expect(texto(w)).toContain("projetos em destaque")
     expect(w.find("[data-testid='gasolina-df']").exists()).toBe(false)
   })

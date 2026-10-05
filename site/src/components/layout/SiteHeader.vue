@@ -50,19 +50,19 @@ function alternarIdioma(): void {
 <style scoped>
 .cabecalho {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(15, 23, 42, 0.92);
+  background: rgba(14, 17, 22, 0.86);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--cor-borda);
 }
 .cabecalho__barra { display: flex; align-items: center; gap: 0.75rem; min-height: 64px; flex-wrap: wrap; }
-.cabecalho__marca { font-weight: 700; color: var(--cor-texto-forte); text-decoration: none; margin-right: auto; }
+.cabecalho__marca { font-family: var(--fonte-display); font-weight: 750; font-size: 1.15rem; font-variation-settings: "wdth" 88; color: var(--cor-texto-forte); text-decoration: none; margin-right: auto; }
 .cabecalho__nav { display: none; width: 100%; flex-direction: column; padding-bottom: 0.75rem; order: 3; }
 .cabecalho__nav--aberta { display: flex; }
 .cabecalho__nav a {
   color: var(--cor-texto); text-decoration: none; padding: 0.625rem 0.25rem;
   min-height: 44px; display: flex; align-items: center;
 }
-.cabecalho__nav a:hover { color: var(--cor-azul); }
+.cabecalho__nav a:hover { color: var(--cor-destaque); }
 @media (min-width: 900px) {
   .cabecalho__menu { display: none; }
   .cabecalho__nav { display: flex; flex-direction: row; width: auto; padding: 0; order: 0; gap: 1.25rem; }

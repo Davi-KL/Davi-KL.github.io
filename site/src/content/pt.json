@@ -88,6 +88,7 @@
       "tituloDados": "Preços dos combustíveis no Brasil — Davi Levy",
       "descricaoDados": "Análise interativa dos preços de gasolina, etanol e diesel desde 2004, com dados da ANP atualizados toda semana."
     },
+    "carrossel": { "anterior": "Anterior", "proximo": "Próximo" },
     "rodape": {
       "texto": "Feito com Vue 3, Vite e dados abertos da ANP.",
       "codigo": "Código-fonte"

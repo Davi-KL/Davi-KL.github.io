@@ -40,18 +40,21 @@ export function itensRanking(r: Ranking, produto: Produto): ItemRanking[] {
 
 export function tracosRanking(r: Ranking, produto: Produto, fmtVar: FmtNulo, destaque = "DF"): { tracos: Traco[]; altura: number; referencia: number | null } {
   const itens = [...itensRanking(r, produto)].reverse()
+  const referencia = r.itens.find((i) => i.uf === "BR" && i.produto === produto)?.preco_medio ?? null
+  // Barras que passam da média nacional (a linha tracejada) ficam em âmbar.
+  const acimaDaMedia = (preco: number) => referencia !== null && preco > referencia
   return {
     tracos: [{
       type: "bar",
       orientation: "h",
       x: itens.map((i) => i.preco_medio),
       y: itens.map((i) => i.uf),
-      marker: { color: itens.map((i) => (i.uf === destaque ? COR_DESTAQUE : CORES_PRODUTO[produto])) },
+      marker: { color: itens.map((i) => (i.uf === destaque || acimaDaMedia(i.preco_medio) ? COR_DESTAQUE : CORES_PRODUTO[produto])) },
       customdata: itens.map((i) => fmtVar(i.variacao_12m_pct)),
       hovertemplate: "%{y}: R$ %{x:.2f} · 12m: %{customdata}<extra></extra>",
     }],
     altura: Math.max(360, itens.length * 22 + 80),
-    referencia: r.itens.find((i) => i.uf === "BR" && i.produto === produto)?.preco_medio ?? null,
+    referencia,
   }
 }
 
